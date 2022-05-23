@@ -12,20 +12,24 @@ const Dashboard = () => {
             <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content px-12">
                 <h2 className='text-3xl text-center my-6 font-bold text-secondary'>Welcome to Dashboard</h2>
-                <Outlet/>
-                
+                <Outlet />
+
 
             </div>
             <div class="drawer-side">
                 <label for="my-drawer-2" class="drawer-overlay"></label>
                 <ul class="menu p-4 overflow-y-auto w-80 bg-base-200 rounded-lg text-base-content">
-                    {!admin && <li><Link to="/dashboard">My Orders</Link></li>}
-                    {!admin && <li><Link to="/dashboard/addReview">Add a Review</Link></li>}
+                    {!admin && <>
+                        <li><Link to="/dashboard">My Orders</Link></li>
+                        <li><Link to="/dashboard/addReview">Add a Review</Link></li>
+                    </>}
                     <li><Link to="/dashboard/myProfile">My Profile</Link></li>
-                    {admin && <li><Link to="/dashboard/makeAdmin">Make Admin</Link></li>}
-                    {admin && <li><Link to="/dashboard/manageAllOrders">Manage All Orders</Link></li>}
-                    {admin && <li><Link to="/dashboard/addProduct">Add a Product</Link></li>}
-                    {admin && <li><Link to="/dashboard/manageProducts">Manage Products</Link></li>}
+                    {admin && <>
+                        <li><Link to="/dashboard/makeAdmin">Make Admin</Link></li>
+                        <li><Link to="/dashboard/manageAllOrders">Manage All Orders</Link></li>
+                        <li><Link to="/dashboard/addProduct">Add a Product</Link></li>
+                        <li><Link to="/dashboard/manageProducts">Manage Products</Link></li>
+                    </>}
                 </ul>
 
             </div>

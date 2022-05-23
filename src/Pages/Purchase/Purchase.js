@@ -80,7 +80,7 @@ const Purchase = () => {
                     <label class="label">
                         <span class="label-text-alt font-bold">Order Quantity: (min. 100pcs)</span>
                     </label>
-                    <input name='order' type="number" onChange={handleQuantity} value={product.minOrder} class="input input-bordered w-full max-w-xs lg:max-w-xl" />
+                    <input name='order' type="text" onChange={handleQuantity} value={product.minOrder} class="input input-bordered w-full max-w-xs lg:max-w-xl" />
                     <label class="label">
                         {
                            product.minOrder < 100 ? <span class="label-text-alt font-bold text-error">"Please Enter Minimum Quantity."</span> : ''
