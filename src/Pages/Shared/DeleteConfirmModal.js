@@ -1,5 +1,5 @@
 import React from 'react';
-import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 const DeleteConfirmModal = ({ deleting, refetch, setDeleting }) => {
     const { _id, name } = deleting;
@@ -14,7 +14,13 @@ const DeleteConfirmModal = ({ deleting, refetch, setDeleting }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount) {
-                    toast.success('Deleted SuccessfullY.');
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Deleted SuccessfullY.',
+                        showConfirmButton: false,
+                        timer: 2000
+                      })
                     setDeleting(null);
                     refetch();
                 };

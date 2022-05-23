@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
@@ -15,38 +16,44 @@ const AddProduct = () => {
             method: 'POST',
             body: formData
         })
-        .then(res => res.json())
-        .then(result => {
-            if(result.success) {
-                const image = result.data.url;
-                const product = {
-                    name: data.name,
-                    image: image,
-                    shortDetails: data.shortDetails,
-                    minOrder: data.minOrder,
-                    available: data.available,
-                    price: data.price
+            .then(res => res.json())
+            .then(result => {
+                if (result.success) {
+                    const image = result.data.url;
+                    const product = {
+                        name: data.name,
+                        image: image,
+                        shortDetails: data.shortDetails,
+                        minOrder: data.minOrder,
+                        available: data.available,
+                        price: data.price
+                    }
+                    fetch('http://localhost:5000/products', {
+                        method: "POST",
+                        headers: {
+                            'content-type': 'application/json',
+                            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                        },
+                        body: JSON.stringify(product)
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.insertedId) {
+                                Swal.fire({
+                                    position: 'center',
+                                    icon: 'success',
+                                    title: 'Product Added SuccessfullY.',
+                                    showConfirmButton: false,
+                                    timer: 2000
+                                })
+                                reset();
+                            }
+                            else {
+                                toast.error('Failed to add Product')
+                            }
+                        })
                 }
-                fetch('http://localhost:5000/products', {
-                    method: "POST",
-                    headers: {
-                        'content-type': 'application/json',
-                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
-                    },
-                    body: JSON.stringify(product)
-                })
-                .then(res => res.json())
-                .then(data => {
-                    if(data.insertedId) {
-                        toast.success('Successfully added a Product.')
-                        reset();
-                    }
-                    else{
-                        toast.error('Failed to add Product')
-                    }
-                })
-            }
-        })
+            })
     };
     return (
         <div>
