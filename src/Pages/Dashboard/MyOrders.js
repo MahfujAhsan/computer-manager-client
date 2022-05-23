@@ -28,12 +28,12 @@ const MyOrders = () => {
                     setOrders(data)
                 })
         }
-    }, [user])
+    }, [user, navigate])
     return (
         <div>
             <h2 className='text-2xl text-center my-6 font-bold'>Total Orders: <span className='text-secondary'>{orders.length}</span></h2>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>
@@ -45,12 +45,12 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            orders.map((order, index) => <tr>
+                            orders.map((order, index) => <tr key={index}>
                                 <th>{index + 1}</th>
                                 <td>{order.name}</td>
                                 <td>{order.productName}</td>
                                 <td>{order.order}</td>
-                                <td><button class="btn btn-xs">Cancel</button></td>
+                                <td><button className="btn btn-xs">Cancel</button></td>
                             </tr>)
                         }
                     </tbody>

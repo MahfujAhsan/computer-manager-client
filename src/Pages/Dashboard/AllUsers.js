@@ -11,10 +11,10 @@ const AllUsers = ({ user, refetch, index }) => {
             }
         })
             .then(res => {
-                if(res.status === 403) {
+                if (res.status === 403) {
                     toast.error('Failed to made an Admin')
                 }
-               return res.json()
+                return res.json()
             })
             .then(data => {
                 if (data.modifiedCount > 0) {
@@ -25,10 +25,10 @@ const AllUsers = ({ user, refetch, index }) => {
     }
     return (
         <tr>
-            <th>{index+1}</th>
+            <th>{index + 1}</th>
             <td>{email}</td>
-            <td>{role !== 'admin' ? <button onClick={makeAdmin} class="btn btn-xs">Make Admin</button> : <small className='font-bold'>Already an Admin</small>}</td>
-            <td><button class="btn btn-xs">Remove User</button></td>
+            <td>{role !== 'admin' ? <button onClick={makeAdmin} className="btn btn-xs">Make Admin</button> : <small className='font-bold'>Already an Admin</small>}</td>
+            <td><button className="btn btn-xs">Remove User</button></td>
         </tr>
     );
 };

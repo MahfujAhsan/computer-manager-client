@@ -41,13 +41,13 @@ const Purchase = () => {
             phone: phone
         };
         axios.post('http://localhost:5000/orders', orderInfo)
-        .then(function (response) {
-            console.log(response)
-            if(response.data.insertedId){
-                toast.success('You Have Placed an Order.')
-                e.target.reset()
-            }
-        })
+            .then(function (response) {
+                console.log(response)
+                if (response.data.insertedId) {
+                    toast.success('You Have Placed an Order.')
+                    e.target.reset()
+                }
+            })
     }
 
     return (
@@ -61,42 +61,42 @@ const Purchase = () => {
             <div className='border-2 border-secondary rounded-lg p-5'>
                 <h2 className='text-3xl text-secondary font-bold text-center mb-4'>Place your Order</h2>
                 <form onSubmit={handleOrder} className='grid grid-cols-1 justify-center gap-3' >
-                    <label class="label">
-                        <span class="label-text-alt font-bold">Your Name:</span>
+                    <label className="label">
+                        <span className="label-text-alt font-bold">Your Name:</span>
                     </label>
-                    <input name='name' type="text" value={user?.displayName} class="input input-bordered w-full max-w-xs lg:max-w-xl" disabled />
-                    <label class="label">
-                        <span class="label-text-alt font-bold">Your Email:</span>
+                    <input name='name' type="text" value={user?.displayName} className="input input-bordered w-full max-w-xs lg:max-w-xl" disabled />
+                    <label className="label">
+                        <span className="label-text-alt font-bold">Your Email:</span>
                     </label>
-                    <input name='email' type="email" value={user?.email} class="input input-bordered w-full max-w-xs lg:max-w-xl" disabled />
-                    <label class="label">
-                        <span class="label-text-alt font-bold">Product Name:</span>
+                    <input name='email' type="email" value={user?.email} className="input input-bordered w-full max-w-xs lg:max-w-xl" disabled />
+                    <label className="label">
+                        <span className="label-text-alt font-bold">Product Name:</span>
                     </label>
-                    <input name='productName' type="text" value={product.name} class="input input-bordered w-full max-w-xs lg:max-w-xl" disabled />
-                    <label class="label">
-                        <span class="label-text-alt font-bold">Available Products: </span>
+                    <input name='productName' type="text" value={product.name} className="input input-bordered w-full max-w-xs lg:max-w-xl" disabled />
+                    <label className="label">
+                        <span className="label-text-alt font-bold">Available Products: </span>
                     </label>
-                    <input name='available' type="number" value={product.available} class="input input-bordered w-full max-w-xs lg:max-w-xl" disabled />
-                    <label class="label">
-                        <span class="label-text-alt font-bold">Order Quantity: (min. 100pcs)</span>
+                    <input name='available' type="number" value={product.available} className="input input-bordered w-full max-w-xs lg:max-w-xl" disabled />
+                    <label className="label">
+                        <span className="label-text-alt font-bold">Order Quantity: (min. 100pcs)</span>
                     </label>
-                    <input name='order' type="text" onChange={handleQuantity} value={product.minOrder} class="input input-bordered w-full max-w-xs lg:max-w-xl" />
-                    <label class="label">
+                    <input name='order' type="text" onChange={handleQuantity} value={product.minOrder} className="input input-bordered w-full max-w-xs lg:max-w-xl" />
+                    <label className="label">
                         {
-                           product.minOrder < 100 ? <span class="label-text-alt font-bold text-error">"Please Enter Minimum Quantity."</span> : ''
+                            product.minOrder < 100 ? <span className="label-text-alt font-bold text-error">"Please Enter Minimum Quantity."</span> : ''
                         }
                         {
-                           product.available < product.minOrder ? <span class="label-text-alt font-bold text-error">"Enter a Valid Quantity (within 'Available Products')."</span> : ''
+                            product.available < product.minOrder ? <span className="label-text-alt font-bold text-error">"Enter a Valid Quantity (within 'Available Products')."</span> : ''
                         }
                     </label>
-                    <label class="label">
-                        <span class="label-text-alt font-bold">Shipping Address:</span>
+                    <label className="label">
+                        <span className="label-text-alt font-bold">Shipping Address:</span>
                     </label>
-                    <input name='shippingAdd' type="text" placeholder='Shipping Address' class="input input-bordered w-full max-w-xs lg:max-w-xl" />
-                    <label class="label">
-                        <span class="label-text-alt font-bold">Phone Number:</span>
+                    <input name='shippingAdd' type="text" placeholder='Shipping Address' className="input input-bordered w-full max-w-xs lg:max-w-xl" />
+                    <label className="label">
+                        <span className="label-text-alt font-bold">Phone Number:</span>
                     </label>
-                    <input name='phone' type="tel" placeholder='Your Phone' class="input input-bordered w-full max-w-xs lg:max-w-xl" />
+                    <input name='phone' type="tel" placeholder='Your Phone' className="input input-bordered w-full max-w-xs lg:max-w-xl" />
 
                     <input disabled={product.minOrder < 100 || product.available < product.minOrder} className='btn btn-secondary w-full max-w-xs lg:max-w-xl font-bold' type="submit" value="Place Order" />
                 </form>

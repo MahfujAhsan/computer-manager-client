@@ -10,15 +10,15 @@ const ManageProducts = () => {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
-    }).then(res => res.json()));
+    }).then(res => res.json()))
     if (isLoading) {
         return <Spinner />
-    }
+    };
     return (
         <div>
             <h2 className='text-2xl text-center font-bold my-4'>Total Products: {products.length}</h2>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>
@@ -29,22 +29,22 @@ const ManageProducts = () => {
                     </thead>
                     <tbody>
                         {
-                            products.map((product, index) => 
-                            <ProductsRow 
-                            key={product._id} 
-                            product={product} 
-                            index={index} 
-                            refetch={refetch}
-                            setDeleting={setDeleting}>
-                            </ProductsRow>)
+                            products.map((product, index) =>
+                                <ProductsRow
+                                    key={product._id}
+                                    product={product}
+                                    index={index}
+                                    refetch={refetch}
+                                    setDeleting={setDeleting}>
+                                </ProductsRow>)
                         }
                     </tbody>
                 </table>
             </div>
             {deleting && <DeleteConfirmModal
-            deleting={deleting}
-            refetch={refetch}
-            setDeleting={setDeleting}
+                deleting={deleting}
+                refetch={refetch}
+                setDeleting={setDeleting}
             ></DeleteConfirmModal>}
         </div>
     );

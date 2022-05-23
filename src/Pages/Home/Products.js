@@ -5,7 +5,7 @@ import Product from './Product';
 const axios = require('axios').default;
 
 const Products = () => {
-    const {data:products, isLoading} = useQuery('products', () => axios.get('http://localhost:5000/products'));
+    const {data:products, isLoading, refetch} = useQuery('products', () => fetch('http://localhost:5000/products').then(res => res.json()));
     if(isLoading) {
         return <Spinner/>
     };
@@ -14,7 +14,7 @@ const Products = () => {
             <h2 className='text-3xl text-secondary text-center uppercase font-bold my-12'>Our Products</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {
-                 products.data.slice(0, 6).map(product => <Product key={product._id} product={product}/>)
+                 products.slice(0,6).map(product => <Product key={product._id} product={product} refetch={refetch}/>)
                 }
             </div>
         </div>

@@ -20,7 +20,7 @@ const DeleteConfirmModal = ({ deleting, refetch, setDeleting }) => {
                         title: 'Deleted SuccessfullY.',
                         showConfirmButton: false,
                         timer: 2000
-                      })
+                    })
                     setDeleting(null);
                     refetch();
                 };
@@ -28,14 +28,14 @@ const DeleteConfirmModal = ({ deleting, refetch, setDeleting }) => {
     }
     return (
         <div>
-            <input type="checkbox" id="delete-confirm-modal" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <h3 class="font-bold text-lg text-center text-red-600">Are You Sure you want to Delete?<br /> <small>{name}</small> </h3>
-                    <p class="py-4 text-center">Once You Deleted, It's cann't be undo.</p>
-                    <div class="modal-action">
-                        <td><button onClick={() => handleDelete()} class="btn btn-xs bg-white">Delete</button></td>
-                        <label for="delete-confirm-modal" class="btn btn-xs bg-white">Cancel</label>
+            <input type="checkbox" id="delete-confirm-modal" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg text-center text-red-600">Are You Sure you want to Delete?<br /> <small>{name}</small> </h3>
+                    <p className="py-4 text-center">Once You Deleted, It's cann't be undo.</p>
+                    <div className="modal-action">
+                        <td><button onClick={() => handleDelete()} className="btn btn-xs bg-white">Delete</button></td>
+                        <label htmlFor="delete-confirm-modal" className="btn btn-xs bg-white">Cancel</label>
                     </div>
                 </div>
             </div>
