@@ -12,6 +12,10 @@ import MyOrders from "./Pages/Dashboard/MyOrders";
 import AddReview from "./Pages/Dashboard/AddReview";
 import MyProfile from "./Pages/Dashboard/MyProfile";
 import MakeAdmin from "./Pages/Dashboard/MakeAdmin";
+import RequireAdmin from "./Pages/Login/RequireAdmin";
+import ManageAllOrders from "./Pages/Dashboard/ManageAllOrders";
+import AddProduct from "./Pages/Dashboard/AddProduct";
+import ManageProducts from "./Pages/Dashboard/ManageProducts";
 
 function App() {
   return (
@@ -27,14 +31,33 @@ function App() {
 
         <Route path="/dashboard" element={
           <ProtectedRoute>
-            <Dashboard/>
+            <Dashboard />
           </ProtectedRoute>}>
-            <Route index element={<MyOrders></MyOrders>}></Route>
-            <Route path="addReview" element={<AddReview></AddReview>}></Route>
-            <Route path="myProfile" element={<MyProfile></MyProfile>}></Route>
-            <Route path="makeAdmin" element={<MakeAdmin></MakeAdmin>}></Route>
+          <Route index element={<MyOrders></MyOrders>}></Route>
+          <Route path="addReview" element={<AddReview></AddReview>}></Route>
+          <Route path="myProfile" element={<MyProfile></MyProfile>}></Route>
+          <Route path="makeAdmin" element={
+            <RequireAdmin>
+              <MakeAdmin></MakeAdmin>
+            </RequireAdmin>}>
+          </Route>
+          <Route path="manageAllOrders" element={
+            <RequireAdmin>
+              <ManageAllOrders></ManageAllOrders>
+            </RequireAdmin>}>
+          </Route>
+          <Route path="addProduct" element={
+            <RequireAdmin>
+              <AddProduct></AddProduct>
+            </RequireAdmin>}>
+          </Route>
+          <Route path="manageProducts" element={
+            <RequireAdmin>
+              <ManageProducts></ManageProducts>
+            </RequireAdmin>}>
+          </Route>
         </Route>
-        
+
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
       </Routes>
