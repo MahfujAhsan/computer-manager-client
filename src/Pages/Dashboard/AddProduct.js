@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
@@ -28,11 +27,22 @@ const AddProduct = () => {
                     available: data.available,
                     price: data.price
                 }
-                axios.post('http://localhost:5000/products', product)
-                .then(function (response) {
-                    if(response.data.insertedId) {
-                        toast.success('Product Added SuccessfullY.')
+                fetch('http://localhost:5000/products', {
+                    method: "POST",
+                    headers: {
+                        'content-type': 'application/json',
+                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                    },
+                    body: JSON.stringify(product)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if(data.insertedId) {
+                        toast.success('Successfully added a Product.')
                         reset();
+                    }
+                    else{
+                        toast.error('Failed to add Product')
                     }
                 })
             }

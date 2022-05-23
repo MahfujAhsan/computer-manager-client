@@ -1,7 +1,7 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const AllUsers = ({ user, refetch }) => {
+const AllUsers = ({ user, refetch, index }) => {
     const { email, role } = user;
     const makeAdmin = () => {
         fetch(`http://localhost:5000/user/admin/${email}`, {
@@ -25,7 +25,7 @@ const AllUsers = ({ user, refetch }) => {
     }
     return (
         <tr>
-            <th>1</th>
+            <th>{index+1}</th>
             <td>{email}</td>
             <td>{role !== 'admin' ? <button onClick={makeAdmin} class="btn btn-xs">Make Admin</button> : <small className='font-bold'>Already an Admin</small>}</td>
             <td><button class="btn btn-xs">Remove User</button></td>
