@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 import auth from '../../firebase.init';
 
 const Purchase = () => {
@@ -28,6 +28,7 @@ const Purchase = () => {
         const email = e.target.email.value;
         const productName = e.target.productName.value;
         const available = e.target.available.value;
+        const price = e.target.price.value;
         const order = e.target.order.value;
         const shippingAdd = e.target.shippingAdd.value;
         const phone = e.target.phone.value;
@@ -36,6 +37,7 @@ const Purchase = () => {
             email: email,
             productName: productName,
             available: available,
+            price: price,
             order: order,
             shippingAdd: shippingAdd,
             phone: phone
@@ -44,7 +46,13 @@ const Purchase = () => {
             .then(function (response) {
                 console.log(response)
                 if (response.data.insertedId) {
-                    toast.success('You Have Placed an Order.')
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Order Placed SuccessfullY.',
+                        showConfirmButton: false,
+                        timer: 2000
+                    })
                     e.target.reset()
                 }
             })
@@ -56,7 +64,7 @@ const Purchase = () => {
                 <h2 className='text-xl my-3 font-bold'>{product.name}</h2>
                 <img className='w-75 mx-auto' src={product.image} alt="" />
                 <p className='my-3'>{product.shortDetails}</p>
-                <p className='text-xl'><span className='font-bold'>Price: {product.price}</span> $<span className='text-secondary'>(Per Unit)</span></p>
+                <p className='text-xl'><span className='font-bold'>Price: ${product.price}</span> <span className='text-secondary'>(Per Unit)</span></p>
             </div>
             <div className='border-2 border-secondary rounded-lg p-5'>
                 <h2 className='text-3xl text-secondary font-bold text-center mb-4'>Place your Order</h2>
@@ -78,9 +86,13 @@ const Purchase = () => {
                     </label>
                     <input name='available' type="number" value={product.available} className="input input-bordered w-full max-w-xs lg:max-w-xl" disabled />
                     <label className="label">
+                        <span className="label-text-alt font-bold">Price $ (Per Unit) : </span>
+                    </label>
+                    <input name='price' type="number" value={product.price} className="input input-bordered w-full max-w-xs lg:max-w-xl" disabled />
+                    <label className="label">
                         <span className="label-text-alt font-bold">Order Quantity: (min. 100pcs)</span>
                     </label>
-                    <input name='order' type="text" onChange={handleQuantity} value={product.minOrder} className="input input-bordered w-full max-w-xs lg:max-w-xl" />
+                    <input name='order' type="number" onChange={handleQuantity} value={product.minOrder} className="input input-bordered w-full max-w-xs lg:max-w-xl" />
                     <label className="label">
                         {
                             product.minOrder < 100 ? <span className="label-text-alt font-bold text-error">"Please Enter Minimum Quantity."</span> : ''
