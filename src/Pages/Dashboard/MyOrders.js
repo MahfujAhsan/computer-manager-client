@@ -36,9 +36,8 @@ const MyOrders = () => {
                 <table className="table w-full">
                     <thead>
                         <tr>
-                            <th></th>
-                            <th>Your Name</th>
                             <th>Product Name</th>
+                            <th>Transaction Id</th>
                             <th>Quantity</th>
                             <th>Status</th>
                             <th>Action</th>
@@ -47,19 +46,18 @@ const MyOrders = () => {
                     <tbody>
                         {
                             orders.map((order, index) => <tr key={index}>
-                                <th>{index + 1}</th>
-                                <td>{order.name}</td>
                                 <td>{order.productName}</td>
+                                <td className='font-bold'>{order.transactionId}</td>
                                 <td>{order.order}</td>
                                 <td>
                                     {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}>
                                         <button className="btn btn-xs">Payment</button>
                                     </Link>}
                                     {(order.price && order.paid) && 
-                                        <span className="text-success font-bold">Paid</span>
+                                        <p className="text-success border-2 border-success rounded-lg text-center font-bold">Paid</p>
                                     }
                                 </td>
-                                <td><button className="btn btn-xs">Cancel</button></td>
+                                <td>{!order.paid && <button className="btn btn-xs">Cancel</button>}</td>
                             </tr>)
                         }
                     </tbody>
