@@ -10,6 +10,18 @@ import molinard5 from "../../assets/molinard-ss/Screenshot_5.png";
 import molinard6 from "../../assets/molinard-ss/Screenshot_6.png";
 import molinard7 from "../../assets/molinard-ss/Screenshot_7.png";
 import molinard8 from "../../assets/molinard-ss/Screenshot_8.png";
+import computing1 from "../../assets/quickcomuting-ss/Screenshot_1.png";
+import computing2 from "../../assets/quickcomuting-ss/Screenshot_2.png";
+import computing3 from "../../assets/quickcomuting-ss/Screenshot_3.png";
+import computing4 from "../../assets/quickcomuting-ss/Screenshot_4.png";
+import ydkjs8 from "../../assets/ydkjs-ss/Screenshot_1.png";
+import ydkjs1 from "../../assets/ydkjs-ss/Screenshot_2.png";
+import ydkjs2 from "../../assets/ydkjs-ss/Screenshot_3.png";
+import ydkjs3 from "../../assets/ydkjs-ss/Screenshot_4.png";
+import ydkjs4 from "../../assets/ydkjs-ss/Screenshot_5.png";
+import ydkjs5 from "../../assets/ydkjs-ss/Screenshot_6.png";
+import ydkjs6 from "../../assets/ydkjs-ss/Screenshot_7.png";
+import ydkjs7 from "../../assets/ydkjs-ss/Screenshot_8.png";
 
 const MyPortfolio = () => {
     return (
@@ -69,7 +81,7 @@ const MyPortfolio = () => {
                     </div>
                     <div>
                         <div>
-                            * <p className='mb-3'><Link className='font-bold' to="#">https://molinard-perfumer.web.app/</Link></p>
+                            <p className='mb-3'>* <Link className='font-bold' to="#">https://molinard-perfumer.web.app/</Link></p>
                             <Carousel autoPlay={true}>
                                 <div>
                                     <img src={molinard1} alt='' />
@@ -97,8 +109,52 @@ const MyPortfolio = () => {
                                 </div>
                             </Carousel>
                         </div>
-                        * <p><Link className='font-bold' to="#">https://ydkjs-review.netlify.app/</Link></p>
-                        * <p><Link className='font-bold' to="#">https://quick-computing.netlify.app/</Link></p>
+                        <div>
+                            <p>* <Link className='font-bold' to="#">https://quick-computing.netlify.app/</Link></p>
+                            <Carousel autoPlay={true}>
+                                <div>
+                                    <img src={computing1} alt='' />
+                                </div>
+                                <div>
+                                    <img src={computing2} alt='' />
+                                </div>
+                                <div>
+                                    <img src={computing3} alt='' />
+                                </div>
+                                <div>
+                                    <img src={computing4} alt='' />
+                                </div>
+                            </Carousel>
+                        </div>
+                        <div>
+                            <p className='mb-3'>* <Link className='font-bold' to="#">https://ydkjs-review.netlify.app/</Link></p>
+                            <Carousel autoPlay={true}>
+                                <div>
+                                    <img src={ydkjs1} alt='' />
+                                </div>
+                                <div>
+                                    <img src={ydkjs2} alt='' />
+                                </div>
+                                <div>
+                                    <img src={ydkjs3} alt='' />
+                                </div>
+                                <div>
+                                    <img src={ydkjs4} alt='' />
+                                </div>
+                                <div>
+                                    <img src={ydkjs5} alt='' />
+                                </div>
+                                <div>
+                                    <img src={ydkjs6} alt='' />
+                                </div>
+                                <div>
+                                    <img src={ydkjs7} alt='' />
+                                </div>
+                                <div>
+                                    <img src={ydkjs8} alt='' />
+                                </div>
+                            </Carousel>
+                        </div>
                     </div>
                 </div>
             </div>
