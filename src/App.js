@@ -20,6 +20,7 @@ import Payment from "./Pages/Dashboard/Payment";
 import useAdmin from "./Hooks/useAdmin";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "./firebase.init";
+import Footer from "./Pages/Shared/Footer";
 
 function App() {
   const [user] = useAuthState(auth);
@@ -68,6 +69,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
       </Routes>
+      <Footer/>
       <ToastContainer />
     </div>
   );
