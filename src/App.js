@@ -21,6 +21,11 @@ import useAdmin from "./Hooks/useAdmin";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "./firebase.init";
 import Footer from "./Pages/Shared/Footer";
+import AllProducts from "./Pages/AllProducts/AllProducts";
+import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
+import Blogs from "./Pages/Blogs/Blogs";
+import NotFound from "./Pages/Shared/NotFound";
+
 
 function App() {
   const [user] = useAuthState(auth);
@@ -40,7 +45,7 @@ function App() {
           <ProtectedRoute>
             <Dashboard />
           </ProtectedRoute>}>
-          {! admin ? <Route index element={<MyOrders></MyOrders>}></Route> : <Route index element={<MyProfile></MyProfile>}></Route>}
+          {!admin ? <Route index element={<MyOrders></MyOrders>}></Route> : <Route index element={<MyProfile></MyProfile>}></Route>}
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route path="addReview" element={<AddReview></AddReview>}></Route>
           <Route path="myProfile" element={<MyProfile></MyProfile>}></Route>
@@ -66,10 +71,14 @@ function App() {
           </Route>
         </Route>
 
+        <Route path="allProducts" element={<AllProducts />}></Route>
+        <Route path="myPortfolio" element={<MyPortfolio />}></Route>
+        <Route path="blogs" element={<Blogs />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
+        <Route path="*" element={<NotFound/>}></Route>
       </Routes>
-      <Footer/>
+      <Footer />
       <ToastContainer />
     </div>
   );
