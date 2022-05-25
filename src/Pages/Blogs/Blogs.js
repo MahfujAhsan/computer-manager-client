@@ -25,7 +25,7 @@ const Blogs = () => {
             <div className='lg:w-2/4 mx-auto p-5'>
                 <h2 className='mockup-code px-8 font-bold text-white text-xl'>You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</h2>
                 <p className='font-bold my-3'>* Use 'filter' & then use 'includes' for find every product's name (a specific property in each item/product) in an array that is also a specific condition. That's mean, it should describe something like, Filter products if 'name' property includes in product object in products Array. Code Snippet Below: </p>
-                <pre data-prefix="$"><code className='text-secondary font-bold'>$ products.filter(product => product.name.includes(searchInputValue))</code></pre>
+                <pre data-prefix="$"><code className='text-secondary font-bold'>$ products.filter(product =[greater then symbol] product.name.includes(searchInputValue))</code></pre>
             </div>
             <div className='lg:w-2/4 mx-auto p-5'>
                 <h2 className='mockup-code px-8 bg-secondary font-bold text-white text-xl'>What is a unit test? Why should write unit tests?</h2>
@@ -36,8 +36,8 @@ const Blogs = () => {
                 <p className='font-bold my-3'>* Unit tests improves our application maintainability.</p>
                 <p className='font-bold my-3'>* Provides quick feedback on file-save to tell you whether or not your changes worked.</p>
                 <p className='font-bold my-3'>* Provides a great safety net which can enhance your confidence when its time to add features or refactor existing features.</p>
-                <p className='font-bold my-3'>* Unit tests improves our application maintainability.</p>
-                <p className='font-bold my-3'>* Unit tests improves our application maintainability.</p>
+                <p className='font-bold my-3'>* Unit tests improves the way you write code.</p>
+                <p className='font-bold my-3'>* Unit tests also help for Prevent regressions</p>
             </div>
         </div>
     );
