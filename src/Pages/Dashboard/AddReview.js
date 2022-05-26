@@ -23,27 +23,27 @@ const AddReview = () => {
             },
             body: JSON.stringify(review)
         })
-        .then(res => res.json())
-        .then(data => {
-            if (data.insertedId) {
-                Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    title: 'Thank You for Your Valuable FeedBack.',
-                    showConfirmButton: false,
-                    timer: 2000
-                })
-                reset();
-            }
-            else {
-                toast.error('Failed to add Review')
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Thank You for Your Valuable FeedBack.',
+                        showConfirmButton: false,
+                        timer: 2000
+                    })
+                    reset();
+                }
+                else {
+                    toast.error('Failed to add Review')
+                }
+            })
     };
     return (
         <div data-aos="flip-left"
-        data-aos-easing="ease-out-cubic"
-        data-aos-duration="1000">
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1000">
             <h2 className='text-3xl font-bold text-center my-6'>Add a Review</h2>
             <div className="card w-full bg-neutral text-neutral-content">
                 <div className="card-body items-center text-center">
@@ -55,7 +55,7 @@ const AddReview = () => {
                             <input type="text"
                                 value={user?.displayName}
                                 className="input input-bordered w-full max-w-xs"
-                                {...register("name")} disabled/>
+                                {...register("name")} disabled />
                         </div>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
@@ -64,14 +64,14 @@ const AddReview = () => {
                             <input type="email"
                                 value={user?.email}
                                 className="input input-bordered w-full max-w-xs"
-                                {...register("email")} disabled/>
+                                {...register("email")} disabled />
                         </div>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
                                 <span className="label-text font-bold">Give Us a Rating</span>
                             </label>
                             <select
-                                class="select select-bordered"
+                                className="select select-bordered"
                                 {...register("ratings")}>
                                 <option selected>1</option>
                                 <option>2</option>

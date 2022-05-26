@@ -27,14 +27,14 @@ const MyPortfolio = () => {
     return (
         <div>
             <div className='lg:w-2/4 mx-auto'>
-                <div class="mockup-code text-center">
+                <div className="mockup-code text-center">
                     <pre><code className='text-xl font-bold'>Name: Mahfujur Rahman</code></pre>
                     <pre className='my-3'><code className='text-xl font-bold'>Email: ahsanmahfuj@gmail.com</code></pre>
                 </div>
                 <div className='my-6'>
                     <h2 className='text-lg font-bold my-6'>Educational Background :</h2>
-                    <div class="overflow-x-auto">
-                        <table class="table w-full table-compact">
+                    <div className="overflow-x-auto">
+                        <table className="table w-full table-compact">
                             <thead>
                                 <tr>
                                     <th></th>
@@ -50,7 +50,7 @@ const MyPortfolio = () => {
                                     <td>Business Studies</td>
                                     <td>2015</td>
                                 </tr>
-                                <tr class="active">
+                                <tr className="active">
                                     <th>2</th>
                                     <td>Bukabunia Ideal High Secondary School</td>
                                     <td>Business Studies</td>
@@ -59,7 +59,7 @@ const MyPortfolio = () => {
                             </tbody>
                         </table>
                     </div>
-                    <div class="mockup-code text-center my-8">
+                    <div className="mockup-code text-center my-8">
                         <pre><code className='text-xl font-bold'>Technologies that I Learned as a Web Developer:</code></pre>
                     </div>
                     <div className='grid grid-cols-2'>
@@ -76,7 +76,7 @@ const MyPortfolio = () => {
                             <p>* ExpressJS</p>
                         </div>
                     </div>
-                    <div class="mockup-code text-center my-8">
+                    <div className="mockup-code text-center my-8">
                         <pre><code className='text-xl font-bold'>Projects Links, that I Completed:</code></pre>
                     </div>
                     <div>

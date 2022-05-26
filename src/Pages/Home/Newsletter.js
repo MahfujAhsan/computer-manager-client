@@ -14,7 +14,7 @@ const Newsletter = () => {
                 <h2 className='text-2xl font-bold'>Join our newsletter</h2>
                 <p className='my-6'>Sign up our newsletter and get more events & promotions!</p>
                 <div className='flex items-center justify-center'>
-                    <input type="text" placeholder="Your Email" class="input input-bordered w-full max-w-xs mr-6" /><FontAwesomeIcon icon={faMailForward} size="2x" className='text-white mr-5'/><Link to="#"><FontAwesomeIcon className='text-green-700' icon={faMailBulk} size='2x' spin/></Link>
+                    <input type="text" placeholder="Your Email" className="input input-bordered w-full max-w-xs mr-6" /><FontAwesomeIcon icon={faMailForward} size="2x" className='text-white mr-5' /><Link to="#"><FontAwesomeIcon className='text-green-700' icon={faMailBulk} size='2x' spin /></Link>
                 </div>
             </div>
         </div>

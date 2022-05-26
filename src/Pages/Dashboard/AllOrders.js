@@ -11,7 +11,7 @@
 //             <td>{_id}</td>
 //             <td>{email}</td>
 //             <td>{!paid && <p className="text-success border-2 border-success rounded-lg text-center font-bold">UnPaid</p>}</td>
-//             <td>{paid && <button class="btn btn-xs btn-outline">Pending</button>}</td>
+//             <td>{paid && <button className="btn btn-xs btn-outline">Pending</button>}</td>
 //             <td>
 //                 {!paid && <label onClick={() => setOrderDelete(order)} htmlFor="order-delete-modal" className="btn btn-xs bg-white"><FontAwesomeIcon className='text-xl' icon={faTrashCan} /></label>}
 //             </td>
