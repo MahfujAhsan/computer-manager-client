@@ -4,7 +4,7 @@ import Spinner from '../Shared/Spinner';
 import AllReview from './AllReview';
 
 const Review = () => {
-    const { data: reviews, isLoading, refetch } = useQuery('review', () => fetch('http://localhost:5000/reviews', {
+    const { data: reviews, isLoading, refetch } = useQuery('review', () => fetch('https://nameless-reef-03073.herokuapp.com/reviews', {
         method: 'GET',
         headers: {
             'content-type': 'application/json',
@@ -21,7 +21,7 @@ const Review = () => {
                 <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 px-12'>
 
                     {
-                        reviews.slice(-3).map(review => <AllReview key={review._id} review={review} refetch={refetch}/>)
+                        reviews.slice(-3).map(review => <AllReview key={review._id} review={review} refetch={refetch} />)
                     }
 
                 </div>

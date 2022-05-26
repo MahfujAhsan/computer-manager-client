@@ -4,7 +4,7 @@ import Spinner from '../Shared/Spinner';
 import Product from './Product';
 
 const Products = () => {
-    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('http://localhost:5000/products').then(res => res.json()));
+    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('https://nameless-reef-03073.herokuapp.com/products').then(res => res.json()));
     if (isLoading) {
         return <Spinner />
     };

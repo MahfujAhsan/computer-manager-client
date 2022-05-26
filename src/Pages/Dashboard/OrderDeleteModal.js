@@ -1,11 +1,11 @@
-import React  from 'react';
+import React from 'react';
 import Swal from 'sweetalert2';
 
-const OrderDeleteModal = ({orderDelete, setOrderDelete}) => {
-    const {_id, productName} = orderDelete;
+const OrderDeleteModal = ({ orderDelete, setOrderDelete }) => {
+    const { _id, productName } = orderDelete;
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/orders/${_id}`, {
+        fetch(`https://nameless-reef-03073.herokuapp.com/orders/${_id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

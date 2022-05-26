@@ -13,7 +13,7 @@ const MyOrders = () => {
     const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-             fetch(`http://localhost:5000/orders?email=${user.email}`, {
+            fetch(`https://nameless-reef-03073.herokuapp.com/orders?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -49,15 +49,15 @@ const MyOrders = () => {
                     <tbody>
                         {
                             orders.map((order, index) => <OrdersRow
-                            order={order} key={order._id} setOrderDelete={setOrderDelete} index={index}
+                                order={order} key={order._id} setOrderDelete={setOrderDelete} index={index}
                             ></OrdersRow>)
                         }
                     </tbody>
                 </table>
             </div>
             {orderDelete && <OrderDeleteModal
-            orderDelete={orderDelete}
-            setOrderDelete={setOrderDelete}
+                orderDelete={orderDelete}
+                setOrderDelete={setOrderDelete}
             ></OrderDeleteModal>}
         </div>
     );

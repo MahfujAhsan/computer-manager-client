@@ -10,7 +10,7 @@ const Purchase = () => {
     const [product, setProduct] = useState([]);
     const [user] = useAuthState(auth);
     useEffect(() => {
-        axios.get(`http://localhost:5000/products/${id}`)
+        axios.get(`https://nameless-reef-03073.herokuapp.com/products/${id}`)
             .then(function (response) {
                 setProduct(response.data);
             })
@@ -42,7 +42,7 @@ const Purchase = () => {
             shippingAdd: shippingAdd,
             phone: phone
         };
-        axios.post('http://localhost:5000/orders', orderInfo)
+        axios.post('https://nameless-reef-03073.herokuapp.com/orders', orderInfo)
             .then(function (response) {
                 console.log(response)
                 if (response.data.insertedId) {
