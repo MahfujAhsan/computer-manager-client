@@ -56,7 +56,9 @@ const AddProduct = () => {
             })
     };
     return (
-        <div>
+        <div data-aos="flip-right"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="1000">
             <h2 className='text-3xl font-bold text-center my-6'>Add a Product</h2>
             <div className="card w-full bg-neutral text-neutral-content">
                 <div className="card-body items-center text-center">

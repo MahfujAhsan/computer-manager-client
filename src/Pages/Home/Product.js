@@ -5,7 +5,9 @@ const Product = ({ product, refetch }) => {
     const { _id, name, image, shortDetails, minOrder, available, price } = product;
     refetch();
     return (
-        <div className='border-2 border-secondary rounded-lg shadow-lg py-8'>
+        <div data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="500" className='border-2 border-secondary rounded-lg shadow-lg py-8'>
             <div className='text-center'>
                 <h2 className='font-bold my-3'>{name}</h2>
                 <img className='w-3/4 mx-auto rounded-lg' src={image} alt="" />

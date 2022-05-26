@@ -12,7 +12,7 @@ const BusinessSummery = () => {
             <div class="stats stats-vertical lg:stats-horizontal shadow-lg w-full">
                 <div class="stat text-center">
                     <div class="stat-figure text-secondary">
-                        <FontAwesomeIcon icon={faLandmarkFlag} size="3x" spin />
+                        <FontAwesomeIcon icon={faLandmarkFlag} size="3x"/>
                     </div>
                     <div class="stat-value text-secondary">72</div>
                     <div class="text-xl">Countries</div>
@@ -35,13 +35,13 @@ const BusinessSummery = () => {
 
                 <div class="stat text-center">
                     <div class="stat-figure text-secondary">
-                        <FontAwesomeIcon icon={faHeart} size="3x" spin />
+                        <FontAwesomeIcon icon={faHeart} size="3x"/>
                     </div>
                     <div class="stat-value text-secondary">432+</div>
                     <div class="text-xl">Feedbacks</div>
                 </div>
             </div>
-            <div className='text-center py-8 shadow-lg max-w-lg mx-auto my-8'>
+            <div className='text-center py-8 shadow-lg rounded-lg max-w-lg mx-auto my-8'>
                 <h2 className='text-xl font-bold uppercase'>If Any Query, Please Get in Touch with Us.</h2>
                 <button className='btn btn-neutral my-4 font-bold'>Contact Us</button>
             </div>

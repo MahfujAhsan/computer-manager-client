@@ -43,7 +43,7 @@ const Login = () => {
         signInWithEmailAndPassword(data.email, data.password)
     };
     return (
-        <div className='flex h-screen justify-center items-center'>
+        <div data-aos="zoom-out-down" className='flex h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="text-center text-3xl font-bold text-secondary">Log In</h2>

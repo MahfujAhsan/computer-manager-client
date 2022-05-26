@@ -25,9 +25,15 @@ import AllProducts from "./Pages/AllProducts/AllProducts";
 import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
 import Blogs from "./Pages/Blogs/Blogs";
 import NotFound from "./Pages/Shared/NotFound";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const [user] = useAuthState(auth);
   const [admin] = useAdmin(user);
   return (

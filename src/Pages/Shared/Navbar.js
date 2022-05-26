@@ -34,7 +34,7 @@ const Navbar = () => {
                     <input type="checkbox" />
                     <svg className="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="24" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" /></svg>
                 </label>
-                <Link to="/" className="btn bg-neutral normal-case ml-2 lg:ml-0 lg:text-xl">Computer Manager</Link>
+                <Link to="/" className="btn bg-neutral normal-case ml-2 lg:ml-0 lg:text-xl">Computer Manager Ltd.</Link>
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost ml-4 lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
