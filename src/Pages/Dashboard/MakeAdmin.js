@@ -15,7 +15,7 @@ const MakeAdmin = () => {
     }
     return (
         <div>
-            <h2>All Users: {users.length}</h2>
+            <h2 className='text-3xl text-center font-bold my-3'>All Users: {users.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
