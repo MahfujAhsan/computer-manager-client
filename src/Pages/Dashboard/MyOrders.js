@@ -13,7 +13,7 @@ const MyOrders = () => {
     const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            fetch(`https://nameless-reef-03073.herokuapp.com/orders?email=${user.email}`, {
+            fetch(`https://computer-manager-server.vercel.app/orders?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

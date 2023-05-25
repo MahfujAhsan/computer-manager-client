@@ -28,7 +28,7 @@ const AddProduct = () => {
                         available: data.available,
                         price: data.price
                     }
-                    fetch('https://nameless-reef-03073.herokuapp.com/products', {
+                    fetch('https://computer-manager-server.vercel.app/products', {
                         method: "POST",
                         headers: {
                             'content-type': 'application/json',

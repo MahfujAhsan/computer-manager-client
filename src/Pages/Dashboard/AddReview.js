@@ -15,7 +15,7 @@ const AddReview = () => {
             ratings: data.ratings,
             description: data.description
         };
-        fetch('https://nameless-reef-03073.herokuapp.com/reviews', {
+        fetch('https://computer-manager-server.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

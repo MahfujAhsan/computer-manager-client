@@ -10,7 +10,7 @@ const Purchase = () => {
     const [product, setProduct] = useState([]);
     const [user] = useAuthState(auth);
     useEffect(() => {
-        axios.get(`https://nameless-reef-03073.herokuapp.com/products/${id}`)
+        axios.get(`https://computer-manager-server.vercel.app/products/${id}`)
             .then(function (response) {
                 setProduct(response.data);
             })
@@ -42,7 +42,7 @@ const Purchase = () => {
             shippingAdd: shippingAdd,
             phone: phone
         };
-        axios.post('https://nameless-reef-03073.herokuapp.com/orders', orderInfo)
+        axios.post('https://computer-manager-server.vercel.app/orders', orderInfo)
             .then(function (response) {
                 console.log(response)
                 if (response.data.insertedId) {

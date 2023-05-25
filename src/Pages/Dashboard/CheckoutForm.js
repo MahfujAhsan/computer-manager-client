@@ -15,7 +15,7 @@ const CheckoutForm = ({ order }) => {
     const price = (order.price * order.order);
 
     useEffect(() => {
-        fetch('https://nameless-reef-03073.herokuapp.com/create-payment-intent', {
+        fetch('https://computer-manager-server.vercel.app/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -85,7 +85,7 @@ const CheckoutForm = ({ order }) => {
                 order: order.productName,
                 transactionId: paymentIntent.id,
             }
-            fetch(`https://nameless-reef-03073.herokuapp.com/orders/${order._id}`, {
+            fetch(`https://computer-manager-server.vercel.app/orders/${order._id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

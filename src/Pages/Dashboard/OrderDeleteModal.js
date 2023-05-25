@@ -5,7 +5,7 @@ const OrderDeleteModal = ({ orderDelete, setOrderDelete }) => {
     const { _id, productName } = orderDelete;
 
     const handleDelete = () => {
-        fetch(`https://nameless-reef-03073.herokuapp.com/orders/${_id}`, {
+        fetch(`https://computer-manager-server.vercel.app/orders/${_id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
