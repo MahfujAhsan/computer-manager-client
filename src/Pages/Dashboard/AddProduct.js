@@ -28,7 +28,7 @@ const AddProduct = () => {
                         available: data.available,
                         price: data.price
                     }
-                    fetch('https://computer-manager-server.vercel.app/products', {
+                    fetch('http://localhost:5000/products', {
                         method: "POST",
                         headers: {
                             'content-type': 'application/json',

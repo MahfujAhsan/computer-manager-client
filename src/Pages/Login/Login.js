@@ -30,10 +30,6 @@ const Login = () => {
         };
     }, [token, navigate, from])
 
-    if (loading || googleLoading) {
-        return <Spinner />
-    };
-
     if (error || googleError) {
         errorText = <p className='text-error my-3'>{error?.message || googleError?.message}</p>
     }
@@ -41,6 +37,11 @@ const Login = () => {
     const onSubmit = data => {
         console.log(data);
         signInWithEmailAndPassword(data.email, data.password)
+        navigate('/')
+    };
+
+    if (loading || googleLoading) {
+        return <Spinner />
     };
     return (
         <div data-aos="zoom-out-down" className='flex h-screen justify-center items-center'>

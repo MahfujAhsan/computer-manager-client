@@ -4,7 +4,7 @@ import Spinner from '../Shared/Spinner';
 import AllProduct from './AllProduct';
 
 const AllProducts = () => {
-    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('https://computer-manager-server.vercel.app/products').then(res => res.json()));
+    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('http://localhost:5000/products').then(res => res.json()));
     if (isLoading) {
         return <Spinner />
     }

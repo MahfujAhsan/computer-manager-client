@@ -5,7 +5,7 @@ const DeleteConfirmModal = ({ deleting, refetch, setDeleting }) => {
     const { _id, name } = deleting;
 
     const handleDelete = () => {
-        fetch(`https://computer-manager-server.vercel.app/products/${_id}`, {
+        fetch(`http://localhost:5000/products/${_id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

@@ -36,6 +36,7 @@ const SignUp = () => {
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
+        navigate('/')
     };
     return (
         <div data-aos="flip-up" className='flex h-screen justify-center items-center'>

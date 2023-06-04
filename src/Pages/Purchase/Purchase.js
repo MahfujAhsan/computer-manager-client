@@ -10,7 +10,7 @@ const Purchase = () => {
     const [product, setProduct] = useState([]);
     const [user] = useAuthState(auth);
     useEffect(() => {
-        axios.get(`https://computer-manager-server.vercel.app/products/${id}`)
+        axios.get(`http://localhost:5000/products/${id}`)
             .then(function (response) {
                 setProduct(response.data);
             })
@@ -42,7 +42,7 @@ const Purchase = () => {
             shippingAdd: shippingAdd,
             phone: phone
         };
-        axios.post('https://computer-manager-server.vercel.app/orders', orderInfo)
+        axios.post('http://localhost:5000/orders', orderInfo)
             .then(function (response) {
                 console.log(response)
                 if (response.data.insertedId) {

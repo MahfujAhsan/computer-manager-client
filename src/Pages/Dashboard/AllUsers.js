@@ -4,9 +4,10 @@ import { toast } from 'react-toastify';
 const AllUsers = ({ user, refetch, index }) => {
     const { email, role } = user;
     const makeAdmin = () => {
-        fetch(`https://computer-manager-server.vercel.app/user/admin/${email}`, {
+        fetch(`http://localhost:5000/user/admin/${email}`, {
             method: 'PUT',
             headers: {
+                'content-type': 'application/json',
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }
         })

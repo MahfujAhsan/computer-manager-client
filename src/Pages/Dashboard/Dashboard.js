@@ -13,8 +13,6 @@ const Dashboard = () => {
             <div className="drawer-content px-12">
                 <h2 className='text-3xl text-center my-6 font-bold text-secondary'>Welcome to Dashboard</h2>
                 <Outlet />
-
-
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>

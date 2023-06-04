@@ -4,18 +4,20 @@ import Spinner from '../Shared/Spinner';
 import AllUsers from './AllUsers';
 
 const MakeAdmin = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://computer-manager-server.vercel.app/users', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users', {
         method: 'GET',
         headers: {
+            'content-type': 'application/json',
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
     }).then(res => res.json()));
     if (isLoading) {
         return <Spinner />
     }
+    console.log(users)
     return (
         <div>
-            <h2 className='text-3xl text-center font-bold my-3'>All Users: {users.length}</h2>
+            <h2 className='text-3xl text-center font-bold my-3'>All Users: {users?.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
@@ -28,7 +30,7 @@ const MakeAdmin = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map((user, index) => <AllUsers index={index} key={user._id} user={user} refetch={refetch}></AllUsers>)
+                            users?.map((user, index) => <AllUsers index={index} key={user._id} user={user} refetch={refetch}></AllUsers>)
                         }
                     </tbody>
                 </table>
