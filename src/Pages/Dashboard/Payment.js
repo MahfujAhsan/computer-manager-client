@@ -9,7 +9,7 @@ import CheckoutForm from './CheckoutForm';
 const stripePromise = loadStripe('pk_test_51JyymfFGeWE7vRj4cyD09cDONTTIcCvCDjS8zxgs7DUgTB9YDhcfRi55xhv6OUGOzdTfHEG5IVWsS1udTCfigtjL00nz1QMJTQ');
 const Payment = () => {
     const { id } = useParams();
-    const url = `http://localhost:5000/orders/${id}`;
+    const url = `https://computer-manager-server.vercel.app/orders/${id}`;
     const { data: order, isLoading } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',
         headers: {

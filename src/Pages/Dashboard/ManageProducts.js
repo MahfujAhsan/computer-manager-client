@@ -6,7 +6,7 @@ import ProductsRow from './ProductsRow';
 
 const ManageProducts = () => {
     const [deleting, setDeleting] = useState(null);
-    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('http://localhost:5000/products', {
+    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('https://computer-manager-server.vercel.app/products', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }

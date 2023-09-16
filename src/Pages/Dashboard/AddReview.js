@@ -15,7 +15,7 @@ const AddReview = () => {
             ratings: data.ratings,
             description: data.description
         };
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://computer-manager-server.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

@@ -4,9 +4,9 @@ import AllOrders from './AllOrders';
 const ManageAllOrders = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
-        .then(res => res.json())
-        .then(data => setOrders(data))
+        fetch('https://computer-manager-server.vercel.app/orders')
+            .then(res => res.json())
+            .then(data => setOrders(data))
     }, []);
     return (
         <div>
@@ -24,7 +24,7 @@ const ManageAllOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            orders.map(order => <AllOrders key={order._id} order={order}/>)
+                            orders.map(order => <AllOrders key={order._id} order={order} />)
                         }
                     </tbody>
                 </table>

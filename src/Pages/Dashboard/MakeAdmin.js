@@ -4,7 +4,7 @@ import Spinner from '../Shared/Spinner';
 import AllUsers from './AllUsers';
 
 const MakeAdmin = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://computer-manager-server.vercel.app/users', {
         method: 'GET',
         headers: {
             'content-type': 'application/json',
